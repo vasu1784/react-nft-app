@@ -58,9 +58,9 @@ const Banner = () => {
               NFT marketplace UI created with Anima for Figma. Collect, buy and
               sell art from more than 20k NFT artists.
             </p>
-            <Nav.Link href="#vasu">
+            <Link to="/signup">
               <Button variant="primary navbtn banner-btn">Sign Up</Button>
-            </Nav.Link>
+            </Link>
             <div className="mt-4">
               <div className="row">
                 <div className="col-4">
