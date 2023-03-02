@@ -1,5 +1,5 @@
 import Button from "react-bootstrap/Button";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 import feature from "../assets/feature.gif";
 import { useEffect, useState } from "react";
 const limit = 240;
