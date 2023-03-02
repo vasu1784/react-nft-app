@@ -1,0 +1,418 @@
+:root{
+  --bs-nav-link-font-size:18px;
+  --primary: red;
+  font-family: 'Work Sans', sans-serif;
+}
+
+body{  
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+  color: #ffffff;
+  font-family: 'Work Sans', sans-serif;
+}
+
+
+.navbar-dark .nav-link{
+  --bs-nav-link-color: rgba(255,255,255,1);
+  display: flex;
+  align-items: center;
+  }
+
+  .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #A259FF;
+    --bs-btn-border-color: #A259FF;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0b5ed7;
+    --bs-btn-hover-border-color: #0a58ca;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0a58ca;
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #A259FF;
+    --bs-btn-disabled-border-color: #A259FF;
+}
+
+.navbtn{
+  padding: 12px 24px;
+  transition: ease-in-out 0.7s;
+}
+
+.banner-btn{
+  padding: 0px 50px;
+  height: 60px;
+}
+
+.h2banberfont{
+    font-size: 67px;
+}
+.container{
+  width: min(1054px,100%);
+  margin-inline: auto;
+  padding-inline: 15px;
+  max-width: 100%;
+}
+
+.trendsec .card{
+  border-radius: 20px;
+  border: none;
+  transition: all 0.3s ease;
+  background-color:transparent;
+}
+
+
+.trendsec .card:hover{
+  transform: scale(0.95);
+    border-radius:30px;
+    border:none;
+    outline:none;
+}
+
+
+.padtopset{
+  margin-top: 80px;
+}
+
+.btnview-source{
+  display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+button.viewrank{
+  border: 2px solid #a259ff;
+  height: 60px;
+  padding: 0px 50px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+button.viewrank:hover{
+  transform: scale(0.95);
+  border: 2px solid #a259ff;
+}
+
+.authercards{
+background-color:#3B3B3B;
+align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    gap: 20px;
+    mix-blend-mode: normal;
+    padding: 20px;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.avtarindex{
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background: #2b2b2b;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  height: 7rem;
+  width: 7rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 -34px;
+}
+
+.nameavt{
+  margin-top: -3rem;
+}
+
+.catheadset{
+  background-color: #009ba04a;
+  box-shadow: inset 0 0 0 200px rgb(255 255 255 / 20%);
+}
+
+.autherrowset{
+  row-gap: 28px;
+}
+
+
+.avatarss{
+  background-image: url('https://picsum.photos/seed/200/300');
+  min-height: 240px;
+  /* transition: all 0.3s ease; */
+}
+
+/* .avatarss:hover{
+
+} */
+
+.card.browcard{
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+  transition: all 0.3s ease;
+}
+
+.card.browcard:hover{
+  transform: scale(0.95);
+}
+
+
+.catrow{
+  row-gap: 28px;
+}
+.discovercard{
+  background-color: #3B3B3B;
+  position: relative;
+  padding: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.diccard{
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.diccard:hover{
+  transform: scale(0.95);
+}
+
+.colimgset{
+  margin-bottom: -18px;
+}
+.lowerauth{
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+.footer-cardset{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.discovercard span{
+  color: #858584;
+}
+
+
+.meshroombg{
+background-image: url('https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/nft-highlight@1x.png');
+background-color: transparent;
+background-position: 50% 50%;
+background-size: cover;
+min-height: 650px;
+mix-blend-mode: normal;
+position: relative;
+padding: 0px;
+}
+
+
+
+.whitetbtn{
+  padding: 22px 50px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.whitetbtn:hover{
+  transform: scale(0.95);
+}
+
+.gradientbgsec{
+background:linear-gradient(180deg, rgba(162.00005114078522, 100, 255, 0) 45%, rgb(162.00000554323196, 89.00000229477882, 261) 100%)
+}
+
+div#timer {
+  backdrop-filter: blur(10px) brightness(100%);
+  background-color: #3b3b3b80;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  mix-blend-mode: normal;
+  padding: 30px;
+
+}
+
+.timer-box{
+  display: flex;
+  justify-content: end;
+}
+
+.timer-box h5{
+  font-size: 2rem;
+
+}
+
+
+.topsetbg {
+  display: flex;
+  padding:360px 0px 60px
+}
+
+
+span.avtarbtnbg {
+  display: flex;
+  gap: 12px;
+  background-color: #3b3b3b;
+  height:auto;
+  border-radius:20px;
+  align-items:center;
+  width:fit-content;
+  padding:10px 20px;
+}
+.howcards .card{
+  background-color: #3B3B3B;
+  padding: 10px 30px 30px;
+  text-align: center;
+  border-radius: 20px;
+}
+.formsection{
+  background-color: #3B3B3B;
+  border-radius: 20px;
+  padding: 60px;
+}
+
+.nfttextform {
+  height:60px;
+  border-radius: 20px;
+}
+
+.form-control.nfttextform:focus {
+ outline: none;
+ z-index: 2;
+ border-color: transparent;
+ box-shadow: none;
+}
+
+
+.form-btn{
+  background-color:#a259ff;
+  height: 60px;
+  color: white;
+  left: -19px;
+  width: 169px;
+  border-radius: 20px;
+}
+
+.footer-border{
+  border-bottom: 1px solid ;
+padding-bottom: 20px;
+}
+
+.loadmore{
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+.signform .form-control{
+  align-items: center;
+  align-self: stretch;
+  border-radius: 20px;
+  display: flex;
+  gap: 12px;
+  height: 46px;
+  mix-blend-mode: normal;
+  padding: 10px 20px;
+}
+
+.formwidset{
+  width: 330px;
+}
+
+.signpagetbtn{
+  width: 330px;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 20px;
+  display: flex;
+  gap: 12px;
+  height: 46px;
+  mix-blend-mode: normal;
+  padding: 16px 20px;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.signpagetbtn:hover{ 
+transform: scale(0.95);
+
+}
+
+select.form-control{
+  -webkit-appearance: menulist!important;
+  -moz-appearance: menulist!important;
+  -ms-appearance: menulist!important;
+  -o-appearance: menulist!important;
+  appearance: menulist!important;
+}
+.checkarea{
+  display: flex;
+  gap: 10px;
+}
+/*=========media Query========= */
+
+@media (min-width: 1199px) {
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    transform: scaleX(0);
+    height: 1.4px;
+    bottom: 0;
+    left: 6px;
+    top: 54px;
+    background-color: #A259FF;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+ 
+  .padsetbanner{
+    padding: 40px 195px;
+  }
+
+
+}
+
+
+@media only screen and (min-width : 320px) and (max-width : 1024px){
+  .padtopset{
+    margin-top: 40px;
+  }
+}
+
+
