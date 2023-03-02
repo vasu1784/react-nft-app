@@ -12,13 +12,13 @@ function Navigation() {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
 
-        <Navbar.Brand href="#home" className='d-flex align-items-center gap-3'>
+        <div href="#home" className='d-flex align-items-center gap-3'>
           <Link to="/">
           <img src={Sitelogo} alt=""/>
           <img src={Logo} alt="" />
           </Link>
        
-        </Navbar.Brand>
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">
           <Nav className='gap-lg-4'>
