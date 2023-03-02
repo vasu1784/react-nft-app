@@ -1,7 +1,4 @@
-import {FaAmazon} from 'react-icons/fa';
-import {FaDiscord} from 'react-icons/fa';
-import {FaGooglePay} from 'react-icons/fa';
-import {FaFacebookF} from 'react-icons/fa';
+import {FaAmazon,FaDiscord,FaGooglePay,FaFacebookF} from 'react-icons/fa';
 import Sitelogo from './../assets/Storefront.svg' 
 
 const Footer=()=>{
