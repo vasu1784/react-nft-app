@@ -1,4 +1,4 @@
-import {FaAmazon,FaDiscord,FaGooglePay,FaFacebookF} from 'react-icons/fa';
+// import {FaAmazon,FaDiscord,FaGooglePay,FaFacebookF} from 'react-icons/fa';
 import Sitelogo from './../assets/Storefront.svg' 
 
 const Footer=()=>{
@@ -15,16 +15,16 @@ const Footer=()=>{
                                <span>join Our community</span>
                                             <div className="row mt-4">
                                                  <div className="col-lg-3">
-                                                          <h3><FaAmazon/></h3>
+                                                          {/* <h3><FaAmazon/></h3> */}
                                                  </div>
                                                   <div className="col-lg-3">
-                                                  <h3><FaDiscord/></h3>
+                                                  {/* <h3><FaDiscord/></h3> */}
                                                     </div>
                                                     <div className="col-lg-3">
-                                                    <h3><FaGooglePay/></h3>
+                                                    {/* <h3><FaGooglePay/></h3> */}
                                                     </div>
                                                     <div className="col-lg-3">
-                                                    <h3><FaFacebookF/></h3>
+                                                    {/* <h3><FaFacebookF/></h3> */}
                                                     </div>
                                             </div>
 
