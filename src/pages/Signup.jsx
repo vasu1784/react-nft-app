@@ -1,6 +1,9 @@
 import { useState } from "react";
 import signimg from "../assets/signup.svg";
 const Signup = () => {
+
+const [error,seterror]=useState("");
+
   const [formData, setformData] = useState({
     name: "",
     email: "",
@@ -53,10 +56,15 @@ const Signup = () => {
     postData(
       "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAdXy8akyo2-yeAw29Ni2gWdRgjrKC26tc",
       sigupData
-    ).then((data) => {
-      console.log(data); // JSON data parsed by data.json() call
-    });
+    ).then((res) => {
+      console.log(res); // JSON data parsed by data.json() call
+      // console.log(res.json())
+      if(!res.ok){
+        throw {name: 'Error', message: `Something went wrong! ${res.error.message}`}
+      }
+    }).catch(err => seterror(err.message));
   };
+  console.log( error)
 
   return (
     <div className="container-fluid mt-4">
@@ -184,7 +192,7 @@ const Signup = () => {
                     : "please check the term & conditions"}
                 </p>
               </div>
-
+                  {error && <p>{error}</p>}
               <div className="mb-3">
                 <button type="submit" className="btn btn-primary signpagetbtn">
                   Create account
