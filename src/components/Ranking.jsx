@@ -1,12 +1,11 @@
+import rankingbg from "../assets/rankingbg.svg"
+
 const Ranking=()=>{
+    return(
 
-return(
-   
-       <div className=""container>
-           <h4>Hey From About Page</h4>
-       </div>
-
-)
-
+              <div className="container-fluid mt-3 p-lg-0">
+                <img src={rankingbg} className="card-img-top" alt="..." />
+              </div>
+    )
 }
 export default Ranking;

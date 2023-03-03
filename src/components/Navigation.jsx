@@ -13,7 +13,7 @@ function Navigation() {
       <Container fluid>
 
         <div href="#home" className='d-flex align-items-center gap-3'>
-          <Link to="/">
+          <Link to="/" className='d-flex gap-2'>
           <img src={Sitelogo} alt=""/>
           <img src={Logo} alt="" />
           </Link>
@@ -23,7 +23,7 @@ function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">
           <Nav className='gap-lg-4'>
             <Nav.Link href="#home" className='hover-underline-animation'>Marketplace</Nav.Link>
-            <Nav.Link href="#link" className='hover-underline-animation'>Rankings</Nav.Link>
+            <NavLink to="/ranking" className='hover-underline-animation nav-link'>Rankings</NavLink>
             <Nav.Link href="#home" className='hover-underline-animation'>Connect a wallet</Nav.Link>
             <NavLink  to="/signup"><Button variant="primary navbtn">Sign Up</Button></NavLink>
           </Nav>
