@@ -2,7 +2,11 @@ import { useState } from "react";
 import signimg from "../assets/signup.svg";
 const Signup = () => {
 
-const [error,seterror]=useState("");
+const [status,setStatus]=useState({
+  success: false,
+  error: '',
+  loading: false
+});
 
   const [formData, setformData] = useState({
     name: "",
@@ -23,48 +27,110 @@ const [error,seterror]=useState("");
       ...prev,
       [e.target.name]: inputValue,
     }));
+
+
   };
 
   const onSubmitHandler = async (e) => {
     e.preventDefault(); // This is an snyctic event
 
+
+    if(formData.name === "" ||
+    formData.email === "" ||
+   formData.password === "" ||
+   formData.confirmpassword === ""
+  ){
+    setStatus(prev=>(
+      {
+        ...prev,
+        error: 'Please add all fields!'
+      }
+    ));
+    return;
+  }
+          
+         
+
+     if(formData.password !== formData.confirmpassword){
+      setStatus(prev=>(
+        {
+          ...prev,
+          error: 'Your Confirm password is not match with password !'
+        }
+      ));
+          return;
+     } 
+       
+ 
+
+         if(formData.gender === " "){
+          setStatus(prev=>(
+            {
+              ...prev,
+              error: 'Please select the gender'
+            }
+          ));
+          return;
+         } 
+
+         setStatus(prev=>(
+          {
+            ...prev,
+            error: ''
+          }
+        ));
+
+       
     const sigupData = {
       email: formData.email,
       password: formData.password,
       returnSecureToken: true,
     };
     // console.log(sigupData);
-
+   
     async function postData(url = "", data = {}) {
       // Default options are marked with *
-      const response = await fetch(url, {
+      const res = await fetch(url, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, *cors, same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
         headers: {
           "Content-Type": "application/json",
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        redirect: "follow", // manual, *follow, error
-        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
         body: JSON.stringify(data), // body data type must match "Content-Type" header
       });
-      return response.json(); // parses JSON response into native JavaScript objects
+      return res.json(); // parses JSON response into native JavaScript objects
     }
-
+    setStatus(prev=>({
+      ...prev,
+      loading: true
+    }))
     postData(
       "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAdXy8akyo2-yeAw29Ni2gWdRgjrKC26tc",
       sigupData
-    ).then((res) => {
-      console.log(res); // JSON data parsed by data.json() call
-      // console.log(res.json())
-      if(!res.ok){
-        throw {name: 'Error', message: `Something went wrong! ${res.error.message}`}
+    ).then(async response => {
+      console.log(response)
+      if(response.error){
+        throw {type: 'error', message: `${response.error.code}, Something went wrong!, ${response.error.message}`}
       }
-    }).catch(err => seterror(err.message));
+      setStatus(prev=>({
+        ...prev,
+        success: true
+      }))
+  })
+  .catch(error => {
+      setStatus(prev=>({
+        ...prev,
+        error: error.message
+      }))
+  }).finally(()=>{
+    setStatus(prev=>({
+      ...prev,
+      loading: false
+    }))
+  })
   };
-  console.log( error)
+ 
+  
 
   return (
     <div className="container-fluid mt-4">
@@ -74,6 +140,7 @@ const [error,seterror]=useState("");
         </div>
         <div className="col-lg-6">
           <div className="formwidset">
+            {!status.success && !status.loading && (<>
             <h1>Create Account</h1>
             <p>
               Welcome! Enter Your Details And Start Creating, Collecting And
@@ -91,7 +158,8 @@ const [error,seterror]=useState("");
                   value={formData.name}
                   name="name"
                 />
-                <span>{formData.name}</span>
+                {/* <span>{formData.name}</span>
+                <span>{error}</span> */}
               </div>
 
               <div className="mb-3">
@@ -104,7 +172,8 @@ const [error,seterror]=useState("");
                   value={formData.email}
                   name="email"
                 />
-                <span>{formData.email}</span>
+                {/* <span>{formData.email}</span>
+                <p>{error}</p> */}
               </div>
 
               <div className="mb-3">
@@ -117,7 +186,7 @@ const [error,seterror]=useState("");
                   value={formData.password}
                   onChange={handleformData}
                 />
-                <span>{formData.password}</span>
+                {/* <span>{formData.password}</span> */}
               </div>
 
               <div className="mb-3">
@@ -130,7 +199,7 @@ const [error,seterror]=useState("");
                   value={formData.confirmpassword}
                   onChange={handleformData}
                 />
-                <span>{formData.confirmpassword}</span>
+                {/* <span>{formData.confirmpassword}</span> */}
               </div>
               <div className="mb-3">
                 <div className="form-group">
@@ -147,7 +216,7 @@ const [error,seterror]=useState("");
                     <option value="usa">Usa</option>
                   </select>
                 </div>
-                <span>{formData.selectfield}</span>
+                {/* <span>{formData.selectfield}</span> */}
               </div>
 
               <div className="checkarea mb-3">
@@ -170,8 +239,8 @@ const [error,seterror]=useState("");
                 />
                 <label htmlFor="male">Female</label>
               </div>
-
-              <span>{formData.gender}</span>
+{/* 
+              <span>{formData.gender}</span> */}
 
               <div className="form-check mb-3">
                 <input
@@ -192,13 +261,15 @@ const [error,seterror]=useState("");
                     : "please check the term & conditions"}
                 </p>
               </div>
-                  {error && <p>{error}</p>}
+                  {status.error && <p>{status.error}</p>}
               <div className="mb-3">
                 <button type="submit" className="btn btn-primary signpagetbtn">
                   Create account
                 </button>
               </div>
-            </form>
+            </form></>)}
+            {status.success  && !status.loading && <h4>User SuccessFully Registered!</h4>}
+            {status.loading && <h4>Validating User...</h4>}
           </div>
         </div>
       </div>
