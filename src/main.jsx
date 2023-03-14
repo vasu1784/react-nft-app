@@ -5,7 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Layout from "./components/Layout";
 import Ranking from "./components/Ranking";
-
+import Login from "./pages/Login";
+import { ThemeContextProvider } from "./store/themeContext";
 const router = createBrowserRouter(
   [
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter(
         {
             path: "/ranking",
             element : <Ranking/>
+        },
+        {
+          path: "/login",
+          element : <Login/>
         }
       ],
     },
@@ -33,7 +38,7 @@ const router = createBrowserRouter(
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <ThemeContextProvider>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </ThemeContextProvider>
 );

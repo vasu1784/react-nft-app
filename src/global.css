@@ -11,7 +11,71 @@ body{
   font-family: 'Work Sans', sans-serif;
 }
 
+.appdark .navbar-nav a{
+  color: #333
+}
 
+.appdark .svgcodecolor path{
+ fill: #333;
+}
+
+.appdark .formwidset h1{
+ color: #333;
+}
+
+.appdark .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
+  color: #333;
+}
+
+.appdark h2,.appdark h5, .appdark h4,.appdark p{
+ color: #333;
+}
+
+.appdark span{
+  color: #333;
+}
+
+.appdark .authercards{
+        background-color: #fff;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.appdark .avtarindex{
+  background: #f9e5e5;
+}
+
+.appdark span.avtarbtnbg{
+  background-color: #fff;
+}
+.appdark .discovercard{
+  background-color: #ffffff;
+  color: #333;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.appdark .howcards .card{
+  background-color: #fff;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.appdark .formsection{
+  background-color: #fff;
+   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.appdark {
+  background-color: rgb(255, 255, 255);
+}
+.appdark .bg-dark{
+  background-color: rgb(255, 255, 255) !important;
+  color: #333 !important;
+}
+
+.appdark .text-white{
+  color: #333 !important;
+} 
 .navbar-dark .nav-link{
   --bs-nav-link-color: rgba(255,255,255,1);
   display: flex;
@@ -241,6 +305,17 @@ padding: 0px;
 background:linear-gradient(180deg, rgba(162.00005114078522, 100, 255, 0) 45%, rgb(162.00000554323196, 89.00000229477882, 261) 100%)
 }
 
+
+.appdark #timer{
+  background-color: #ffffff38;
+}
+.appdark #timer p{
+  color: #fff;
+}
+
+.appdark .timer-box h5, .appdark .timer-box span{
+  color: #fff;
+}
 div#timer {
   backdrop-filter: blur(10px) brightness(100%);
   background-color: #3b3b3b80;
@@ -304,6 +379,7 @@ span.avtarbtnbg {
  z-index: 2;
  border-color: transparent;
  box-shadow: none;
+ border: 1px solid #ced4da;
 }
 
 

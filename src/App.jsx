@@ -1,4 +1,3 @@
-import Navigation from "./components/Navigation"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./global.css"
 import Banner from "./components/Banner";
@@ -11,11 +10,13 @@ import Discovercard from "./components/Discovercard";
 import Bgsection from "./components/Bgsection";
 import Howorks from "./components/Howorks";
 import Joinform from "./components/Joinform";
-import Footer  from "./components/Footer";
+
 
 const App=()=>{
+
+
    return(
-      <>
+      <div>
       <Banner/>
       <Trending/>
       <Topcreater/>
@@ -26,7 +27,7 @@ const App=()=>{
       <Bgsection/>
       <Howorks/>
       <Joinform/>
-      </>
+      </div>
    )
  
 
