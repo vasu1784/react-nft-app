@@ -228,7 +228,7 @@ const [status,setStatus]=useState({
                   className="form-check-input"
                   onChange={handleformData}
                 />
-                <label htmlFor="male">Male</label>
+                <label htmlFor="male" className="checkmale-female">Male</label>
                 <input
                   type="radio"
                   id="female"
@@ -237,7 +237,7 @@ const [status,setStatus]=useState({
                   className="form-check-input"
                   onChange={handleformData}
                 />
-                <label htmlFor="male">Female</label>
+                <label htmlFor="male" className="checkmale-female">Female</label>
               </div>
 {/* 
               <span>{formData.gender}</span> */}
@@ -252,7 +252,7 @@ const [status,setStatus]=useState({
                   onChange={handleformData}
                   checked={formData.check}
                 />
-                <label className="form-check-label" htmlFor="defaultCheck1">
+                <label className="form-check-label checkmale-female" htmlFor="defaultCheck1">
                   I Agree T&c
                 </label>
                 <p>

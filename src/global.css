@@ -11,6 +11,16 @@ body{
   font-family: 'Work Sans', sans-serif;
 }
 
+.appdark .rankheading{
+ color: #333;
+}
+.appdark .checkmale-female {
+color: #333;
+}
+
+.imgsetrank .rankimg{
+  transform:  translateY(-80px);
+}
 .appdark .navbar-nav a{
   color: #333
 }

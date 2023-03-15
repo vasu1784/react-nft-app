@@ -16,7 +16,7 @@ const Ranking=()=>{
                             </div>
                         </div>
                                          
-                       <h3>AnikaKid</h3>       
+                       <h3 className="rankheading">AnikaKid</h3>       
 
                        </div>
                             
