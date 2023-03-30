@@ -11,6 +11,12 @@ body{
   font-family: 'Work Sans', sans-serif;
 }
 
+.innercounter {
+  border: 1px solid #A259FF;
+  padding: 40px;
+  border-radius: 20px;
+}
+
 .appdark .rankheading{
  color: #333;
 }
