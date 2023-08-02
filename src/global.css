@@ -98,6 +98,10 @@ color: #333;
   align-items: center;
   }
 
+  .navcsset{
+    border-bottom: 1 px solid red;
+  }
+
   .btn-primary {
     --bs-btn-color: #fff;
     --bs-btn-bg: #A259FF;

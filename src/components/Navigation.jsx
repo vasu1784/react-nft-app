@@ -14,7 +14,7 @@ import ThemeContext from '../store/themeContext';
   const themeCtx = useContext(ThemeContext)
    
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className='p-4'>
+    <Navbar bg="dark" variant="dark" expand="lg" className='p-4 navcsset'>
       <Container fluid>
 
         <div href="#home" className='d-flex align-items-center gap-3'>
