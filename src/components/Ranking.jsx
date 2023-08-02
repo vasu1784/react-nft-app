@@ -45,11 +45,7 @@ const Ranking=()=>{
                                   
 
                        </div>
-                            
-                                   
-                
-
-
+                     
               </div>
     )
 }
