@@ -1,16 +1,71 @@
+import {sendPasswordResetEmail } from "firebase/auth";
+
+import { auth } from "../Firebase/firebase";
 import { useState } from "react";
 import signimg from "../assets/signup.svg";
+
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+
+ const initstatus = {
+   success: false,
+   error: "",
+   loading: false,
+ };
+
 const Login = () => {
-  const [status, setStatus] = useState({
-    success: false,
-    error: "",
-    loading: false,
-  });
+
+const [show, setShow] = useState(false);
+
+const navigate = useNavigate();
+
+const handleClose = () => {
+  setStatus(initstatus);
+  setShow(false)
+
+};
+const handleShow = () => setShow(true);
+
+const [resetemail , setresetemail ] = useState();
+
+
+
+  const [status, setStatus] = useState(initstatus);
 
   const [formData, setformData] = useState({
     email: "",
     password: "",
   });
+
+
+ const HandleForgetPasword = () => {
+   sendPasswordResetEmail(auth, resetemail)
+     .then(() => {
+
+           
+      console.log("hey fromrest", resetemail);
+       // Password reset email sent!
+       // ..
+     })
+     .catch((error) => {
+      console.log(error)
+       let errorMessage = error.message;
+
+       if (error.message === "Firebase: Error (auth/user-not-found)."){
+        
+         errorMessage = "User Not found !"
+       }
+         setStatus((prev) => ({
+           ...prev,
+           error: errorMessage,
+         }));
+       // ..
+     });
+ };
 
   const handleformData = (e) => {
     const inputValue = e.target.value;
@@ -40,8 +95,6 @@ const Login = () => {
       returnSecureToken: true,
     };
 
-    console.log("test");
-
     async function post(url = "", data = {}) {
       // Default options are marked with *
       const res = await fetch(url, {
@@ -69,11 +122,21 @@ const Login = () => {
             message: `${response.error.code}, Something went wrong!, ${response.error.message}`,
           };
         }
+
+        // Storing the response in local storage
+        localStorage.setItem("user", JSON.stringify(response));
+
+
         console.log(response, "response");
+
         setStatus((prev) => ({
           ...prev,
           success: true,
         }));
+
+        setTimeout(() => {
+          navigate("/ranking");
+        }, 2000);
       })
       .catch((error) => {
         setStatus((prev) => ({
@@ -126,7 +189,13 @@ const Login = () => {
                       onChange={handleformData}
                     />
                   </div>
+
+                  <Button variant="primary" onClick={handleShow}>
+                    Forget Password ?
+                  </Button>
+
                   {status.error && <p>{status.error}</p>}
+
                   <div className="mb-3">
                     <button
                       type="submit"
@@ -136,6 +205,40 @@ const Login = () => {
                     </button>
                   </div>
                 </form>
+
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title className="text-dark">Password Reset</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form>
+                      <Form.Group
+                        className="mb-3"
+                        controlId="exampleForm.ControlInput1"
+                      >
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control
+                          type="email"
+                          placeholder="name@example.com"
+                          autoFocus
+                          onChange={(e) => {
+                            setresetemail(e.target.value);
+                          }}
+                          value={resetemail}
+                        />
+                      </Form.Group>
+                    </Form>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Close
+                    </Button>
+                    <Button variant="primary" onClick={HandleForgetPasword}>
+                      Reset Password
+                    </Button>
+                  </Modal.Footer>
+                  <p className="text-center text-dark"> {status.error && <p>{status.error}</p>}</p>
+                </Modal>
               </>
             )}
             {status.success && !status.loading && <h4>Login SuccessFully</h4>}

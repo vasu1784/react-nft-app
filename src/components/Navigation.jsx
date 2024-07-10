@@ -32,9 +32,9 @@ import ThemeContext from '../store/themeContext';
             <NavLink to="/login" className='hover-underline-animation nav-link'>Login</NavLink>
             <NavLink  to="/signup"><Button variant="primary navbtn">Sign Up</Button></NavLink>
             <div className="form-check form-switch d-flex gap-2 justify-content-center align-items-center">
-  <input className="form-check-input" type="checkbox" checked={themeCtx.isDark} id="flexSwitchCheckDefault" onChange={()=>themeCtx.themeToggler()}/>
-  <label className="form-check-label" htmlFor="flexSwitchCheckDefault"> {themeCtx.isDark ? "LightMode": "DarkMode"}</label>
-</div>
+      <input className="form-check-input" type="checkbox" checked={themeCtx.isDark} id="flexSwitchCheckDefault" onChange={()=>themeCtx.themeToggler()}/>
+      <label className="form-check-label" htmlFor="flexSwitchCheckDefault"> {themeCtx.isDark ? "LightMode": "DarkMode"}</label>
+    </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
